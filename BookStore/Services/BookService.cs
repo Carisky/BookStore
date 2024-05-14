@@ -13,7 +13,7 @@ namespace BookStore.Services
             return BooksStore.GetData();
         }
 
-        public static List<Book> FilterData(
+        public static IEnumerable<Book> FilterData(
             string title,
             string author,
             string style,
@@ -26,8 +26,8 @@ namespace BookStore.Services
             DateTime? publishedAt
         )
         {
-            return (List<Book>)
-                GetData()
+
+                var filtered = GetData()
                     .Where(book =>
                         (string.IsNullOrEmpty(title) || book.Title.Contains(title))
                         && (string.IsNullOrEmpty(author) || book.Author.Contains(author))
@@ -45,6 +45,8 @@ namespace BookStore.Services
                             !publishedAt.HasValue || book.PublishedAt.Date == publishedAt.Value.Date
                         )
                     );
+
+            return filtered;
         }
     }
 }
