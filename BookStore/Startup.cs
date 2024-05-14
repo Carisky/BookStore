@@ -55,7 +55,8 @@ namespace BookStore
 
             string storage = env.ContentRootPath+"/storage.txt";
 
-            BooksGenerator.GenerateBooks(10000, storage);
+            BooksGenerator.GenerateBooks(200, storage);
+            BooksStore.LoadStore(storage);
 
             app.UseMvc(routes =>
             {
