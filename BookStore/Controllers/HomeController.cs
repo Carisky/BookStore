@@ -17,6 +17,11 @@ namespace BookStore.Controllers
             return View();
         }
 
+        public IActionResult About()
+        {
+            return View();
+        }
+
         [HttpGet]
         public IActionResult FilterBooks(string title, string author, string style, string theme, string publishingHouse, int? minPages, int? maxPages, int? minCost, int? maxCost, DateTime? publishedAt)
         {

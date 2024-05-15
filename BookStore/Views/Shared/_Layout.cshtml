@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My Book Store</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ775pPahUibscwPAXsr" crossorigin="anonymous">
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-3">
+        <h1>My Book Store</h1>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Home")">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("About", "Home")">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container mt-4">
+        @RenderBody()
+    </div>
+    <footer class="bg-light text-center py-3 mt-4">
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-f2S5f5zzQ5daOgDO/rFqtNJ0g6bOdyC8LlF9qOehupDEEzRQlueufG/+ha9n+TbZ" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-3q2tBLydpM1bW5TUn3blFzP6R4/pLT5h3lM9k5E4JfzvN4Ij6mEQVLe7gg4fow9D" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rQmYIYOqB4bAJ3EVOQzA4vS+gp4ylJ1KhFlDBBaT5j8E8vK0a" crossorigin="anonymous"></script>
+</body>
+</html>
