@@ -24,6 +24,7 @@ else
                 <th>Pages Count</th>
                 <th>Cost</th>
                 <th>Published At</th>
+                <th>Download</th>
             </tr>
         </thead>
         <tbody>
@@ -38,6 +39,19 @@ else
                     <td>@book.PagesCount</td>
                     <td>@book.Cost</td>
                     <td>@book.PublishedAt.ToShortDateString()</td>
+                    <td>
+                        <form action="@Url.Action("CreateFile", "Book")" method="post">
+                            <input type="hidden" name="title" value="@book.Title" />
+                            <input type="hidden" name="author" value="@book.Author" />
+                            <input type="hidden" name="style" value="@book.Style" />
+                            <input type="hidden" name="theme" value="@book.Theme" />
+                            <input type="hidden" name="publishingHouse" value="@book.PublishingHouse" />
+                            <input type="hidden" name="pagesCount" value="@book.PagesCount" />
+                            <input type="hidden" name="cost" value="@book.Cost" />
+                            <input type="hidden" name="publishedAt" value="@book.PublishedAt.ToShortDateString()" />
+                            <button type="submit">Download</button>
+                        </form>
+                    </td>
                 </tr>
             }
         </tbody>
