@@ -1,12 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Text;
+﻿using System.Text;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BookStore.Controllers
 {
     public class BookController : Controller
     {
         [HttpPost]
-        public IActionResult CreateFile(string title, string author, string style, string theme, string publishingHouse, int pagesCount, decimal cost, string publishedAt)
+        public IActionResult CreateFile(
+            string title,
+            string author,
+            string style,
+            string theme,
+            string publishingHouse,
+            int pagesCount,
+            decimal cost,
+            string publishedAt
+        )
         {
             var content = new StringBuilder();
             content.AppendLine($"Title: {title}");
