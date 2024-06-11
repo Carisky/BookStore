@@ -14,16 +14,20 @@ namespace BookStore.Utils
         {
             if (File.Exists(filePath) && new FileInfo(filePath).Length > 0)
             {
-                Console.WriteLine($"The file '{filePath}' already contains data. No new books generated.");
+                Console.WriteLine(
+                    $"The file '{filePath}' already contains data. No new books generated."
+                );
                 return;
             }
             var tasks = new List<Task>();
             for (int i = 0; i < count; i++)
             {
-                tasks.Add(Task.Run(() =>
-                {
-                    GenerateAndWriteBook(filePath);
-                }));
+                tasks.Add(
+                    Task.Run(() =>
+                    {
+                        GenerateAndWriteBook(filePath);
+                    })
+                );
             }
 
             Task.WaitAll(tasks.ToArray());
@@ -45,7 +49,7 @@ namespace BookStore.Utils
             WriteBookToFile(book, filePath);
         }
 
-        private static void WriteBookToFile(Book book, string filePath)
+        public static void WriteBookToFile(Book book, string filePath)
         {
             try
             {

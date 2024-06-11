@@ -1,4 +1,7 @@
-﻿using BookStore.Models;
+﻿using System.Data.SqlTypes;
+using BookStore.Models;
+using BookStore.Services;
+using BookStore.Utils;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,6 +12,19 @@ namespace BookStore.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddBook([FromBody] Book book)
+        {
+            if (!book.IsValid())
+            {
+                return BadRequest(book);
+            }
+
+            BookService.WriteBookToFile(book);
+            BooksStore.LoadStore("storage.txt");
+            return Ok();
         }
 
         [HttpPost]

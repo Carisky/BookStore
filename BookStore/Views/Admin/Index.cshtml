@@ -27,17 +27,42 @@
 <div id="loginMessage"></div>
 
 <div id="additional_content">
-    <form id="loginForm">
+    <form id="addBookForm">
         <div class="mb-3">
-            <label for="username" class="form-label">Username</label>
-            <input type="text" class="form-control" id="username" name="UserName">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="Title">
         </div>
         <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" name="Password">
+            <label for="author" class="form-label">Author</label>
+            <input type="text" class="form-control" id="author" name="Author">
         </div>
-        <button type="submit" class="btn btn-primary">Login</button>
+        <div class="mb-3">
+            <label for="style" class="form-label">Style</label>
+            <input type="text" class="form-control" id="style" name="Style">
+        </div>
+        <div class="mb-3">
+            <label for="theme" class="form-label">Theme</label>
+            <input type="text" class="form-control" id="theme" name="Theme">
+        </div>
+        <div class="mb-3">
+            <label for="publishingHouse" class="form-label">Publishing House</label>
+            <input type="text" class="form-control" id="publishingHouse" name="PublishingHouse">
+        </div>
+        <div class="mb-3">
+            <label for="pagesCount" class="form-label">Pages Count</label>
+            <input type="number" class="form-control" id="pagesCount" name="PagesCount">
+        </div>
+        <div class="mb-3">
+            <label for="cost" class="form-label">Cost</label>
+            <input type="number" class="form-control" id="cost" name="Cost">
+        </div>
+        <div class="mb-3">
+            <label for="publishedAt" class="form-label">Published At</label>
+            <input type="date" class="form-control" id="publishedAt" name="PublishedAt">
+        </div>
+        <button type="submit" class="btn btn-primary">Add Book</button>
     </form>
+
 </div>
 
 <script src="~/js/admin.js"></script>
