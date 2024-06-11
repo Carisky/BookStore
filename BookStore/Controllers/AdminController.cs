@@ -1,11 +1,9 @@
-﻿using System;
-using System.Linq;
-using BookStore.Services;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookStore.Controllers
 {
-    public class HomeController : Controller
+    public class AdminController : Controller
     {
         public IActionResult Index()
         {

@@ -4,8 +4,8 @@ namespace BookStore.Models
 {
     public class Book
     {
-        public string Title { get;}
-        public string Author { get;}
+        public string Title { get; }
+        public string Author { get; }
         public string Style { get; }
         public string Theme { get; }
         public string PublishingHouse { get; }
@@ -13,9 +13,16 @@ namespace BookStore.Models
         public int Cost { get; }
         public DateTime PublishedAt { get; }
 
-
-
-        public Book(string title, string author, string style, string theme, string publishingHouse, int pagesCount, int cost, DateTime publishedAt)
+        public Book(
+            string title,
+            string author,
+            string style,
+            string theme,
+            string publishingHouse,
+            int pagesCount,
+            int cost,
+            DateTime publishedAt
+        )
         {
             Title = title;
             Author = author;
