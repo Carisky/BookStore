@@ -17,7 +17,8 @@ async function displayQuote() {
         quoteContainer.innerHTML = `<div class="blockquote">${quote.content}</div>`;
         quoteAuthorContainer.innerHTML = `<div class="blockquote">${quote.author}</div>`;
     } catch (error) {
-        
+        console.error("Error fetching quote:", error);
+        throw error;
     }
 }
 
